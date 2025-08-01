@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CETPRO American Computer</title>
+    <style>
+        /* Estilos generales de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos para la cabecera */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Efecto de luces de discoteca para el h1 */
+        @keyframes lucesDisco {
+            0% { color: red; text-shadow: 0 0 10px red; }
+            20% { color: yellow; text-shadow: 0 0 10px yellow; }
+            40% { color: green; text-shadow: 0 0 10px green; }
+            60% { color: blue; text-shadow: 0 0 10px blue; }
+            80% { color: purple; text-shadow: 0 0 10px purple; }
+            100% { color: red; text-shadow: 0 0 10px red; }
+        }
+
+        h1 {
+            animation: lucesDisco 2s infinite alternate;
+        }
+
+        /* Contenedor de las tres secciones en formato tríptico */
+        .contenedor {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* Estilos para cada una de las secciones */
+        .seccion {
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        /* Efecto de agrandar la sección cuando el cursor pasa sobre ella */
+        .seccion:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos de los botones */
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: none;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        /* Cambio de color del botón cuando el cursor pasa sobre él */
+        button:hover {
+            background: #2980b9;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Estilos para la imagen giratoria */
+        #imagenGiratoria {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            height: 150px;
+            transition: transform 0.1s linear;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera de la página -->
+    <header>
+        <h1>CETPRO American Computer</h1>
+        <p>Formando profesionales para el futuro</p>
+    </header>
+
+    <!-- Sección principal con tres partes en formato tríptico -->
+    <div class="contenedor">
+        <div class="seccion">
+            <h3>Educación de calidad</h3>
+            <p>Contamos con cursos actualizados y docentes altamente capacitados.</p>
+            <button onclick="alert('¡Explora nuestros cursos!')">Ver más</button>
+        </div>
+        <div class="seccion">
+            <h3>Infraestructura moderna</h3>
+            <p>Nuestras aulas están equipadas con tecnología de última generación.</p>
+            <button onclick="alert('¡Conoce nuestras instalaciones!')">Explorar</button>
+        </div>
+        <div class="seccion">
+            <h3>Oportunidades laborales</h3>
+            <p>Brindamos asesoramiento para tu inserción en el mercado laboral.</p>
+            <button onclick="alert('¡Infórmate sobre nuestras alianzas!')">Saber más</button>
+        </div>
+    </div>
+
+    <!-- Sección con mensaje motivacional y la imagen giratoria -->
+    <section style="padding: 20px;">
+        <!-- Imagen giratoria -->
+        <img id="imagenGiratoria" src="C:\Users\bryan\OneDrive\Imágenes\logoAmerican.png" alt="Imagen representativa">
+        
+        <!-- Mensaje inspirador -->
+        <h2 style="color: #333;">Únete a la mejor experiencia educativa</h2>
+        <p style="max-width: 800px; margin: auto; line-height: 1.5;">
+            CETPRO American Computer te brinda las herramientas para crecer profesionalmente. Nuestro enfoque práctico y nuestras conexiones con empresas del sector te aseguran una formación de primer nivel.
+        </p>
+        <p style="max-width: 800px; margin: auto; line-height: 1.5;">
+            No pierdas la oportunidad de formarte con los mejores. Inscríbete hoy y empieza a construir tu futuro con nosotros.
+        </p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 CETPRO American Computer - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        /* Script para hacer que la imagen gire constantemente */
+        let angulo = 0; // Variable que almacena el ángulo de rotación
+        function girarImagen() {
+            angulo += 1; // Aumentamos el ángulo en 1 grado
+            document.getElementById("imagenGiratoria").style.transform = "rotate(" + angulo + "deg)"; // Aplicamos la rotación
+            requestAnimationFrame(girarImagen); // Llamamos a la función de nuevo para que el giro sea continuo
+        }
+        
+        girarImagen(); // Llamamos a la función para iniciar la animación
+    </script>
+</body>
+</html>
